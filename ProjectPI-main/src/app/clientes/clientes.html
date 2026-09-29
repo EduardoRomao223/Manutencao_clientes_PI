@@ -1,0 +1,37 @@
+<main class="pagina-clientes">
+  <h1>Manutenção de Clientes</h1>
+  <p>Dados fictícios para o Marco 1. Busca, cadastro, edição e exclusão serão implementados nas próximas etapas.</p>
+
+  <div class="barra-acoes">
+    <input type="search" placeholder="Buscar cliente..." aria-label="Buscar cliente" disabled>
+    <button type="button" disabled>+ Novo Cliente</button>
+  </div>
+
+  <div class="tabela-container">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (cliente of clientes; track cliente.id) {
+          <tr>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.cpf }}</td>
+            <td>{{ cliente.telefone }}</td>
+            <td class="acoes">
+              <button type="button" disabled>Editar</button>
+              <button type="button" disabled>Excluir</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</main>
